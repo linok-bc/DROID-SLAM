@@ -133,7 +133,7 @@ class SceneInfo:
 
         metric_scale = 1.0
         if metadata_csv and os.path.exists(metadata_csv):
-            with open(metadata_csv, "r") as f:
+            with open(metadata_csv, "r", encoding="utf-8") as f:
                 for row in csv.DictReader(f):
                     if row["UID"] == scene_id:
                         metric_scale = float(row["Metric Scale"])
